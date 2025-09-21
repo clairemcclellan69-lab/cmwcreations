@@ -5,277 +5,167 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CMW Creations | Wedding Content Creators</title>
   <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
   <style>
     /* Reset & Base */
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       font-family: 'Montserrat', sans-serif;
-      background: #f8f5f2;
+      background: #ffffff;
       color: #333;
       line-height: 1.7;
-      font-size: 1rem;
     }
     a { text-decoration: none; color: inherit; }
+    h1, h2 {
+      font-family: 'Great Vibes', cursive;
+      font-weight: normal;
+      text-align: center;
+    }
+    h1 { font-size: 4rem; margin-bottom: 10px; }
+    h2 { font-size: 3rem; margin-bottom: 40px; color: #a46a78; }
 
-    /* Navigation */
-    nav {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%;
-      background: rgba(248,245,242,0.95);
-      backdrop-filter: blur(6px);
-      display: flex;
-      justify-content: center;
-      gap: 40px;
-      padding: 18px 0;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-      z-index: 1000;
-    }
-    nav a {
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 500;
-      font-size: 1rem;
-      transition: color 0.3s;
-    }
-    nav a:hover { color: #ba7e80; }
+    /* Panels */
+    section { padding: 100px 20px; max-width: 1100px; margin: auto; }
+    section.panel-white { background: #ffffff; }
+    section.panel-cream { background: #fbf7f4; }
+    section.panel-blush { background: #f7ecea; }
+    section.panel-taupe { background: #f1efed; }
 
     /* Hero */
     header {
-      height: 100vh;
-      position: relative;
-      background: url('your-hero-image.jpg') center/cover no-repeat;
+      height: 90vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       text-align: center;
-      color: white;
-    }
-    header::after {
-      content: "";
-      position: absolute;
-      top:0; left:0; right:0; bottom:0;
-      background: rgba(0,0,0,0.45);
-    }
-    header h1, header p, header a {
-      position: relative;
-      z-index: 2;
-    }
-    header h1 {
-      font-family: 'Great Vibes', cursive;
-      font-size: 5.5rem;
-      letter-spacing: 1px;
-    }
-    header p {
-      margin-top: 20px;
-      font-size: 1.5rem;
-      font-weight: 300;
-    }
-    .btn {
-      margin-top: 35px;
-      padding: 14px 38px;
-      background: #ba7e80;
-      color: white;
-      border-radius: 30px;
-      font-weight: 500;
-      font-size: 1.1rem;
-      transition: background 0.3s;
-    }
-    .btn:hover { background: #a26e6f; }
-
-    /* Sections with panels */
-    section {
-      padding: 100px 20px;
-      max-width: 1000px;
-      margin: auto;
-    }
-    /* alternate background panels */
-    section.panel-alt {
       background: #fbf7f4;
+      padding: 0 20px;
     }
+    header h1 { font-size: 5rem; color: #222; }
+    header p { font-size: 1.5rem; margin-top: 10px; color: #555; }
 
-    h2 {
-      font-family: 'Great Vibes', cursive;
-      font-size: 3rem;
-      text-align: center;
-      margin-bottom: 50px;
-      color: #ba7e80;
-      font-weight: normal;
-    }
-
-    /* About */
-    #about p {
+    /* Content blocks */
+    #about p,
+    #services p,
+    #portfolio p,
+    #testimonials p,
+    #contact p {
       max-width: 800px;
       margin: auto;
       text-align: center;
-      font-size: 1.25rem;
+      font-size: 1.2rem;
       color: #444;
-      line-height: 1.8;
     }
-
-    /* Services */
     .services {
       display: flex;
       flex-wrap: wrap;
       gap: 30px;
       justify-content: center;
+      margin-top: 30px;
     }
     .service {
-      background: white;
-      padding: 40px;
-      border: 1px solid #e2dcd8;
-      border-radius: 8px;
-      flex: 1 1 260px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      background: #fff;
+      padding: 30px;
+      border-radius: 12px;
+      flex: 1 1 250px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
       text-align: center;
     }
-    .service h3 {
-      font-family: 'Great Vibes', cursive;
-      margin-bottom: 20px;
-      color: #333;
-      font-size: 2rem;
-      font-weight: normal;
-    }
-    .service p {
-      color: #555;
-      font-size: 1rem;
-    }
+    .service h3 { font-family: 'Playfair Display', serif; margin-bottom: 15px; color: #222; }
 
-    /* Portfolio / Images Panel */
-    .image-panel {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 20px;
-    }
-    .image-panel img {
-      width: 100%;
-      height: auto;
-      object-fit: cover;
-      border-radius: 8px;
-      border: 1px solid #e2dcd8;
-    }
-
-    /* Testimonials */
     .testimonial {
       max-width: 700px;
-      margin: 40px auto;
+      margin: 30px auto;
       font-style: italic;
       text-align: center;
       color: #555;
-      font-size: 1.1rem;
-      line-height: 1.8;
     }
 
     /* Contact */
-    #contact p {
-      max-width: 700px;
-      margin: 20px auto;
-      text-align: center;
-      font-size: 1.15rem;
-      color: #444;
-      line-height: 1.8;
-    }
     #contact a {
-      color: #ba7e80;
+      color: #a46a78;
       font-weight: bold;
-      font-family: 'Montserrat', sans-serif;
     }
-    #contact a:hover {
-      color: #a26e6f;
-    }
+    #contact a:hover { color: #7a4b55; }
 
     /* Footer */
     footer {
-      background: #f5f3f1;
+      background: #fbf7f4;
       text-align: center;
       padding: 30px 15px;
-      font-size: 0.95rem;
+      font-size: 0.9rem;
       color: #666;
-      margin-top: 60px;
     }
   </style>
 </head>
 <body>
 
-  <!-- Navigation -->
-  <nav>
-    <a href="#about">About</a>
-    <a href="#services">Services</a>
-    <a href="#portfolio">Portfolio</a>
-    <a href="#testimonials">Testimonials</a>
-    <a href="#contact">Contact</a>
-  </nav>
+<!-- Hero -->
+<header>
+  <h1>CMW Creations</h1>
+  <p>Capturing Love, Creating Memories</p>
+</header>
 
-  <!-- Hero -->
-  <header>
-    <h1>CMW Creations</h1>
-    <p>Capturing Love, Creating Memories</p>
-    <a href="#contact" class="btn">Work With Us</a>
-  </header>
+<!-- About -->
+<section id="about" class="panel-cream">
+  <h2>Our Story</h2>
+  <p>We’re Claire & Nathaniel, the husband-and-wife team behind CMW Creations.  
+  We believe weddings should be remembered not only through timeless photos, but also through authentic, behind-the-scenes moments you can relive instantly.  
+  With love and creativity, we capture the magic as it unfolds.</p>
+</section>
 
-  <!-- About (panel-alt background) -->
-  <section id="about" class="panel-alt">
-    <h2>Our Story</h2>
-    <p>We’re Claire & Nathaniel, the husband-and-wife team behind CMW Creations.  
-    We believe weddings should be remembered not only through timeless photos, but also through authentic, behind-the-scenes moments you can relive instantly.  
-    With love and creativity, we capture the magic as it unfolds.</p>
-  </section>
-
-  <!-- Services (white background) -->
-  <section id="services">
-    <h2>Our Services</h2>
-    <div class="services">
-      <div class="service">
-        <h3>Wedding Content Creation</h3>
-        <p>Candid clips & behind-the-scenes magic from your big day.</p>
-      </div>
-      <div class="service">
-        <h3>Social-Ready Reels</h3>
-        <p>Instagram & TikTok edits delivered within 24 hours.</p>
-      </div>
-      <div class="service">
-        <h3>Custom Packages</h3>
-        <p>Personalized options designed around your wedding vision.</p>
-      </div>
+<!-- Services -->
+<section id="services" class="panel-white">
+  <h2>Our Services</h2>
+  <div class="services">
+    <div class="service">
+      <h3>Wedding Content Creation</h3>
+      <p>Candid clips & behind-the-scenes magic from your big day.</p>
     </div>
-  </section>
-
-  <!-- Portfolio (panel-alt) -->
-  <section id="portfolio" class="panel-alt">
-    <h2>Portfolio</h2>
-    <div class="image-panel">
-      <!-- Example images; replace with your real ones -->
-      <img src="image1.jpg" alt="Portfolio image 1">
-      <img src="image2.jpg" alt="Portfolio image 2">
-      <img src="image3.jpg" alt="Portfolio image 3">
-      <img src="image4.jpg" alt="Portfolio image 4">
+    <div class="service">
+      <h3>Social-Ready Reels</h3>
+      <p>Instagram & TikTok edits delivered within 24 hours.</p>
     </div>
-  </section>
+    <div class="service">
+      <h3>Custom Packages</h3>
+      <p>Personalized options designed around your wedding vision.</p>
+    </div>
+  </div>
+</section>
 
-  <!-- Testimonials (white background) -->
-  <section id="testimonials">
-    <h2>Testimonials</h2>
-    <div class="testimonial">“CMW Creations captured the little in-between moments that meant the most to us. We’ll cherish them forever.” – Emily & James</div>
-    <div class="testimonial">“Claire and Nathaniel made us feel so comfortable and gave us memories to share the next morning. Truly priceless.” – Sarah & Ryan</div>
-  </section>
+<!-- Portfolio -->
+<section id="portfolio" class="panel-blush">
+  <h2>Portfolio</h2>
+  <p>✨ Coming soon – a collection of love stories we’ve captured ✨</p>
+</section>
 
-  <!-- Contact (panel-alt) -->
-  <section id="contact" class="panel-alt">
-    <h2>Let’s Connect</h2>
-    <p>
-      We’d love to hear from you. Please email us at  
-      <a href="mailto:yourname@example.com?subject=Wedding Inquiry&body=Hi Claire & Nathaniel,%0D%0A%0D%0AHere is my information:%0D%0A%0D%0AName:%0D%0AEmail:%0D%0AWedding Date:%0D%0AWhat I’m envisioning:%0D%0A%0D%0AThanks!">yourname@example.com</a>
-    </p>
-    <p>
-      When emailing, please include your <strong>Name</strong>, <strong>Email</strong>, <strong>Wedding Date</strong>, and a short note about your vision.
-    </p>
-  </section>
+<!-- Testimonials -->
+<section id="testimonials" class="panel-white">
+  <h2>Testimonials</h2>
+  <div class="testimonial">“CMW Creations captured the little in-between moments that meant the most to us. We’ll cherish them forever.” – Emily & James</div>
+  <div class="testimonial">“Claire and Nathaniel made us feel so comfortable and gave us memories to share the next morning. Truly priceless.” – Sarah & Ryan</div>
+</section>
 
-  <!-- Footer -->
-  <footer>
-    © 2025 CMW Creations · Crafted with love by Claire & Nathaniel
-  </footer>
+<!-- Contact -->
+<section id="contact" class="panel-taupe">
+  <h2>Get in Touch</h2>
+  <p>
+    Have questions or want to work together?  
+    Please send us an email at  
+    <a href="mailto:yourname@example.com?subject=Wedding Inquiry&body=Hi,%0D%0A%0D%0AHere is my information:%0D%0A%0D%0AName:%0D%0AEmail:%0D%0AWedding Date:%0D%0AMessage:%0D%0A%0D%0AThanks!">
+      yourname@example.com
+    </a>
+  </p>
+  <p style="margin-top: 20px; color: #555;">
+    When emailing, please include your <strong>Name</strong>, <strong>Email</strong>, <strong>Wedding Date</strong>, and a short <strong>Message</strong> so we can get back to you quickly.
+  </p>
+</section>
+
+<!-- Footer -->
+<footer>
+  © 2025 CMW Creations · Crafted with love by Claire & Nathaniel
+</footer>
 
 </body>
 </html>
